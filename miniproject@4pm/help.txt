@@ -1,0 +1,178 @@
+Step 1.
+    make the mysql database ready
+
+Default Password : root
+
+create the schema
+> create schema angula4pm;
+
+Switch to schema
+> use angula4pm;
+
+create the table
+> create table login_details(uname varchar(20),upwd varchar(20));
+
+insert the data
+> insert into login_details values("admin","admin");
+
+fetch the data
+> select * from login_details;
+
+create the table
+> create table products(p_id integer,p_name varchar(20),p_cost integer);
+
+insert the data
+> insert into products values(111,'p_one',10000);
+        ----
+        ----
+        ----
+> insert into products values(555,'p_five',50000);
+
+fetch the data
+> select * from products;
+
+**********************************************
+host    :   localhost
+user    :   root
+Password:   root
+database: angular4pm
+tables  :   login_details
+            products
+**********************************************
+
+Step 2.
+    make the mongodb ready
+
+start the server
+> mongod
+
+connect to server
+> mongo
+
+create and switch to database
+> use angular4pm
+
+create the collection
+> db.createCollection("products");
+
+insert the json objects
+> db.products.insert({"p_id":111,"p_name":"p_one","p_cost":10000}); 
+    ---
+    ---
+> db.products.insert({"p_id":444,"p_name":"p_four","p_cost":40000});    
+
+fetch the data
+> db.products.find();
+
+********************************************
+host    :   localhost
+
+protocol   :    mongodb
+
+database    :   angular4pm
+
+collection  :   products
+
+port        :   27017
+********************************************
+
+Step 3.
+    create the sample.json file
+
+***********************************
+miniproject@4pm
+            static
+                sample.json
+***********************************
+
+Step 4.
+    download the following node modules
+
+1) express
+2) mysql
+3) mongodb@2.2.32
+4) body-parser
+5) jwt-simple
+
+    > yarn add express mysql mongodb@2.2.32 body-parser jwt-simple --save
+
+
+Step 5.
+    Develop the Rest API'S By Using Node
+
+************************************
+miniproject@4pm 
+              server
+                 config
+                    db_properties.js
+                    db_connection.js
+                 token
+                    token.js
+                 login
+                    login.js
+                 about
+                    about.js
+                 home
+                    home.js
+                 contact
+                    contact.js
+                 logout
+                    logout.js
+                server.js                
+*******************************************************
+
+    - "db_properties.js" file used to maintain the database properties.
+
+    - "db_connection.js" file used to create the mysql connection object.
+
+    - "login.js" file used to create the login Rest API.
+
+    - "about.js" file used to create the about Rest API.
+
+    - "home.js" file used to create the home Rest API.
+
+    - "contact.js" file used to create the contact Rest API.
+
+    - "logout.js" file used to create the logout Rest API.
+
+    - "server.js" file usd to collabrate the modules.
+
+Step 6.
+    Test the following Rest API'S By Using Postman.
+
+Post Requests
+-------------
+1) http://localhost:8080/login 
+2) http://localhost:8080/about
+3) http://localhost:8080/home
+4) http://localhost:8080/contact
+5) http://localhost:8080/logout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
